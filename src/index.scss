@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 @import "./scss/colors";
 
 body {
@@ -67,6 +67,7 @@ svg {
     width: 100%;
   }
 }
+
 .ant-avatar .ant-avatar-string {
   text-transform: uppercase;
 }
@@ -315,6 +316,7 @@ svg {
     }
   }
 }
+
 .ant-btn.button-sky-blue {
   min-width: 48px;
   background-color: $text-input-bg-color;
@@ -450,7 +452,7 @@ svg {
 
 .ant-input-affix-wrapper {
   .ant-input {
-  
+
     &:hover,
     &:focus {
       box-shadow: none;
@@ -722,7 +724,8 @@ svg {
         font-weight: 400;
         line-height: 1.5;
         height: auto;
-        & > span {
+
+        &>span {
           font-weight: 500;
         }
       }

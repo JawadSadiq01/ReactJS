@@ -1,4 +1,3 @@
-// 19 June: Hours = 1 + 2 
 import { ConfigProvider } from "antd";
 import { ErrorBoundary } from "react-error-boundary";
 import { useEffect, useMemo } from "react";
@@ -9,7 +8,6 @@ import { themeState } from "./store/Theme";
 import { ErrorFallback } from "./pages/errors/errorBoundary";
 import "./App.scss";
 import constants from "./config/constants";
-import { ROUTES_CONSTANTS } from "./config/constants";
 import { currentUserState } from "./store/Signin";
 
 function App() {
