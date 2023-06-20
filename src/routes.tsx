@@ -15,6 +15,11 @@ const Loadable = (Component: LazyExoticComponent<FC>) => (props: any) =>
 
 const Dashboard = Loadable(lazy(() => import("./pages/Dashboard")));
 const Error = Loadable(lazy(() => import("./pages/errors/404")));
+const Carriers = Loadable(lazy(() => import("./pages/Carriers")));
+const Contact = Loadable(lazy(() => import("./pages/Contact")));
+const Listing = Loadable(lazy(() => import("./pages/Listing")));
+const Blog = Loadable(lazy(() => import("./pages/Blog")));
+const About = Loadable(lazy(() => import("./pages/About")));
 
 export const publicRoutes = [
   {
@@ -51,6 +56,31 @@ const managerRoutes = [
         key: `${ROUTES_CONSTANTS.DASHBOARD}`,
         path: `${ROUTES_CONSTANTS.DASHBOARD}`,
         element: <Dashboard />,
+      },
+      {
+        key: `${ROUTES_CONSTANTS.BLOG}`,
+        path: `${ROUTES_CONSTANTS.BLOG}`,
+        element: <Blog />,
+      },
+      {
+        key: `${ROUTES_CONSTANTS.LISTING}`,
+        path: `${ROUTES_CONSTANTS.LISTING}`,
+        element: <Listing />,
+      },
+      {
+        key: `${ROUTES_CONSTANTS.CARRIERS}`,
+        path: `${ROUTES_CONSTANTS.CARRIERS}`,
+        element: <Carriers />,
+      },
+      {
+        key: `${ROUTES_CONSTANTS.CONTACT}`,
+        path: `${ROUTES_CONSTANTS.CONTACT}`,
+        element: <Contact />,
+      },
+      {
+        key: `${ROUTES_CONSTANTS.ABOUT}`,
+        path: `${ROUTES_CONSTANTS.ABOUT}`,
+        element: <About />,
       },
     ],
   },

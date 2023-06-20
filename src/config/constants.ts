@@ -10,5 +10,10 @@ export const ROUTES_CONSTANTS: any = {
   SIGNUP: "signup",
   ERROR_PAGE: "error-page",
   DASHBOARD: "dashboard",
+  CARRIERS: "carriers",
+  BLOG: "blog",
+  ABOUT: "about",
+  LISTING: "listing",
+  CONTACT: "contact",
   NotFound: "*"
 };

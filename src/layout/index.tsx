@@ -56,9 +56,9 @@ function AppLayout() {
   return (
     <Layout>
       <AppHeader
-        collapsed={collapsed}
-        sidebarToggler={collapsedSidebar}
-        handleLogout={handleLogout}
+      // collapsed={collapsed}
+      // sidebarToggler={collapsedSidebar}
+      // handleLogout={handleLogout}
       />
 
       <Layout>

@@ -1,25 +1,34 @@
-.ant-layout-header {
-  background-color: #fff;
+.ant-dropdown {
+  width: 15%;
+}
+
+.layout-header {
   box-shadow: 2px 24px 12px rgba(0, 0, 0, 0.04);
   line-height: normal;
   padding: 10px 0;
+  // display: flex;
   height: 80px;
-  display: flex;
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 999;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav-responsive-icon {
+    font-size: 1.5rem;
+  }
 
   @media (max-width: 991px) {
-    height: 70px;
+    height: 100%;
   }
 
   @media (max-width: 575px) {
-    height: 60px;
+    height: 100%;
   }
 
   .ikd-logo {
-    width: 250px;
+    // width: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,281 +42,42 @@
     }
   }
 
-  .ikd-header-content {
-    flex: 1;
-    display: flex;
+  .nav-buttons {
+    padding: 0.5em 0.8em;
+    border: 1px solid #FFF;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: #1677ff;
+    border-radius: 5px;
+  }
 
-    .ikd-header-left {
-      display: flex;
-      height: 100%;
-      padding-right: 20px;
+  .nav-buttons::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #1677ff;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+  }
 
-      @media (max-width: 767px) {
-        padding-right: 0;
-      }
+  .nav-buttons:hover::before {
+    width: 105%;
+  }
 
-      .ikd-header-collapsebale {
-        border-left: 1px solid #D9DBE9;
-        padding: 0 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        @media (max-width: 767px) {
-          padding: 0 15px;
-        }
-
-        .ikd-collapseable-button {
-          height: 24px;
-          width: 24px;
-          overflow: hidden;
-          cursor: pointer;
-
-          .ikd-collapseable-button-toggle {
-            width: 48px;
-            height: 24px;
-            display: flex;
-            transition: all 0.25s;
-          }
-
-          &.hide {
-            .ikd-collapseable-button-toggle {
-              transform: translateX(0);
-            }
-          }
-
-          .ikd-collapseable-button-toggle {
-            transform: translateX(-24px);
-          }
-        }
-      }
-
-      .ikd-search-box {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 600px;
-        border-left: 1px solid #D9DBE9;
-        padding-left: 20px;
-
-        @media (max-width: 1400px) {
-          width: 400px;
-        }
-
-        @media (max-width: 1200px) {
-          max-width: 400px;
-          width: 100%;
-        }
-
-        @media (max-width: 767px) {
-          padding-left: 15px;
-        }
-
-        @media (max-width: 600px) {
-          display: none;
-        }
-
-        .ant-input-group-wrapper {
-          .ant-input-wrapper {
-            .ant-input-affix-wrapper {
-              padding: 0;
-              position: relative;
-
-              .ant-input-prefix {
-                margin: 0;
-                cursor: pointer;
-                position: absolute;
-                top: 50%;
-                left: 20px;
-                margin-top: -12px;
-                z-index: 99;
-              }
-
-              .ant-input {
-                background-color: #E6F4F9;
-                border-radius: 8px;
-                transition: all 0.3s;
-                padding-left: 64px;
-                height: 48px;
-                width: 64px;
-                opacity: 0;
-              }
-
-              &:hover {
-                box-shadow: none;
-              }
-            }
-
-            .ant-input-group-addon {
-              display: none;
-            }
-          }
-        }
-
-        &.expand {
-          .ant-input-group-wrapper {
-            .ant-input-wrapper {
-              .ant-input-affix-wrapper {
-                .ant-input {
-                  width: 100%;
-                  opacity: 1;
-                }
-              }
-            }
-          }
-        }
-      }
-
-      .mobile-search-box {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        border-left: 1px solid #D9DBE9;
-        padding-left: 15px;
-
-        @media (min-width: 601px) {
-          display: none;
-        }
-
-        @media only screen and (max-width:575px) {
-          .ikd-header-content {
-            background-color: red;
-            margin: 50px;
-          }
-
-          display: none;
-        }
-
-        .mobile-searchbox-toggler {
-          cursor: pointer;
-          min-width: 24px;
-        }
-
-        .ant-input-group-wrapper {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 0;
-          z-index: 111;
-          overflow: hidden;
-          transition: all 0.3s;
-
-          .ant-input-wrapper {
-            .ant-input-affix-wrapper {
-              padding: 0;
-              position: relative;
-
-              .ant-input-prefix {
-                margin: 0;
-                cursor: pointer;
-                position: absolute;
-                top: 50%;
-                left: 20px;
-                margin-top: -12px;
-                z-index: 99;
-              }
-
-              .ant-input {
-                background-color: #E6F4F9;
-                border-radius: 0;
-                transition: all 0.3s;
-                padding-left: 64px;
-                height: 60px;
-                width: 100%;
-              }
-            }
-
-            .ant-input-group-addon {
-              display: none;
-            }
-          }
-        }
-
-        &.show {
-          .ant-input-group-wrapper {
-            width: 199%;
-          }
-        }
-      }
-
-      .ikd-header-organisation {
-        border-left: 1px solid #D9DBE9;
-        padding: 0 20px;
-
-        @media (max-width: 960px) {
-          display: none;
-        }
-
-        .organisation-title {
-          font-size: 12px;
-          color: #A0A3BD;
-          line-height: 100%;
-          margin-bottom: 14px;
-          white-space: nowrap;
-        }
-
-        .organisation-logo {
-          min-width: 120px;
-        }
-      }
-    }
-
-    .ikd-header-right {
-      display: flex;
-      margin-left: auto;
-      padding-right: 30px;
-
-      @media (max-width: 767px) {
-        padding-right: 0;
-      }
-
-      .loggedin-user {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        .ant-dropdown-trigger.loggedin-user-avatar {
-          cursor: pointer;
-          margin-right: 10px;
-        }
-      }
-
-      .ikd-header-notification {
-        min-width: 24px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-right: 30px;
-
-        @media (max-width: 767px) {
-          margin-right: 15px;
-        }
-
-        .notification-handler {
-          cursor: pointer;
-        }
-      }
-
-      .ikd-header-message-notif {
-        min-width: 24px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-right: 30px;
-
-        @media (max-width: 767px) {
-          margin-right: 15px;
-        }
-
-        .message-notif-handler {
-          cursor: pointer;
-        }
-      }
-    }
+  .nav-buttons:hover {
+    color: #FFF;
   }
 }
 
@@ -439,4 +209,132 @@
     }
 
   }
+}
+
+
+/* this is a recreation of twitter search in css */
+.form {
+  --input-text-color: #fff;
+  --input-bg-color: #283542;
+  --focus-input-bg-color: transparent;
+  --text-color: #949faa;
+  --active-color: #1b9bee;
+  --width-of-input: 200px;
+  --inline-padding-of-input: 1.2em;
+  --gap: 0.9rem;
+}
+
+/* form style */
+.form {
+  font-size: 0.9rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: var(--width-of-input);
+  position: relative;
+  isolation: isolate;
+}
+
+/* a fancy bg for showing background and border when focus. */
+.fancy-bg {
+  position: absolute;
+  width: 100%;
+  inset: 0;
+  // background: var(--input-bg-color);
+  border-radius: 10px;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 4px;
+}
+
+/* label styling */
+label {
+  width: 100%;
+  padding: 0.8em;
+  height: 40px;
+  padding-inline: var(--inline-padding-of-input);
+  display: flex;
+  align-items: center;
+}
+
+.search,
+.close-btn {
+  position: absolute;
+  cursor: pointer;
+}
+
+/* styling search-icon */
+.search {
+  fill: var(--text-color);
+  left: var(--inline-padding-of-input);
+}
+
+/* svg -- size */
+svg {
+  width: 17px;
+  display: block;
+}
+
+/* styling of close button */
+.close-btn {
+  border: none;
+  right: var(--inline-padding-of-input);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0.1em;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--active-color);
+  opacity: 0;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+/* styling of input */
+.input {
+  color: black;
+  width: 100%;
+  font-size: medium;
+  margin-inline: min(2em, calc(var(--inline-padding-of-input) + var(--gap)));
+  background: none;
+  border: none;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--text-color)
+}
+
+/* input background change in focus */
+.input:focus~.fancy-bg {
+  border: 1px solid var(--active-color);
+  background: var(--focus-input-bg-color);
+}
+
+/* search icon color change in focus */
+.input:focus~.search {
+  fill: var(--active-color);
+}
+
+/* showing close button when typing */
+.input:valid~.close-btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* this is for the default background in input,when selecting autofill options -- you can remove this code if you do not want to override the browser style.  */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+  -webkit-transition-delay: 9999s;
 }
