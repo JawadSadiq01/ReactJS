@@ -5,6 +5,7 @@ import { ROUTES_CONSTANTS } from "./config/constants";
 import Login from "./pages/Login";
 import NotFound from "./pages/errors/404";
 import AppLayout from "./layout";
+import Signup from "./pages/Signup";
 
 const Loadable = (Component: LazyExoticComponent<FC>) => (props: any) =>
 (
@@ -31,6 +32,11 @@ export const publicRoutes = [
     key: `${ROUTES_CONSTANTS.LOGIN}`,
     path: `${ROUTES_CONSTANTS.LOGIN}`,
     element: <Login />,
+  },
+  {
+    key: `${ROUTES_CONSTANTS.SIGNUP}`,
+    path: `${ROUTES_CONSTANTS.SIGNUP}`,
+    element: <Signup />,
   },
   {
     key: `${ROUTES_CONSTANTS.NotFound}`,
