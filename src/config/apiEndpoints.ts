@@ -1,6 +1,4 @@
 const endpoints = {
-  LOGIN: "auth/login",
-  LOGOUT: "/auth/logout",
-  SIGNUP: "/auth/signup",
+  //eg apiEndpoint exports  LOGIN: "auth/login",
 };
 export default endpoints;

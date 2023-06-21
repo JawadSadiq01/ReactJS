@@ -43,8 +43,8 @@
   }
 
   .nav-buttons {
-    padding: 0.5em 0.8em;
-    border: 1px solid #FFF;
+    width: fit-content;
+    border: none;
     position: relative;
     overflow: hidden;
     background-color: transparent;
@@ -73,7 +73,7 @@
   }
 
   .nav-buttons:hover::before {
-    width: 105%;
+    width: 100%;
   }
 
   .nav-buttons:hover {
@@ -285,28 +285,42 @@ svg {
   align-items: center;
   justify-content: center;
   color: #fff;
-  padding: 0.1em;
-  width: 20px;
-  height: 20px;
+  height: 40px;
   border-radius: 50%;
   background: var(--active-color);
   opacity: 0;
   cursor: pointer;
   visibility: hidden;
+  background-color: transparent;
+  color: black;
+  margin-right: -1rem;
 }
 
 /* styling of input */
 .input {
   color: black;
-  width: 100%;
+  // width: 100%;
+  max-width: 10rem !important;
   font-size: medium;
   margin-inline: min(2em, calc(var(--inline-padding-of-input) + var(--gap)));
   background: none;
   border: none;
+  border-color: initial !important;
+  box-shadow: none !important;
+}
+
+.input:hover {
+  border-color: initial !important;
+  box-shadow: none !important;
 }
 
 .input:focus {
   outline: none;
+}
+
+.input:hover {
+  border: none;
+
 }
 
 .input::placeholder {

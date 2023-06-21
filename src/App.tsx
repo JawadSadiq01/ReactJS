@@ -37,7 +37,7 @@ function App() {
           ? useRoutes(
             getRoutes(currentUser.role).concat(getRoutes(constants.PUBLIC))
           )
-          : useRoutes(getRoutes(constants.PUBLIC))}
+          : useRoutes(getRoutes(constants.Manager))}
       </ErrorBoundary>
     </ConfigProvider>
   )

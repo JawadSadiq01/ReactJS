@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { Avatar, Input } from "antd";
+import { Avatar, Button, Input } from "antd";
 import { Link } from "react-router-dom";
 import './style.scss'
 import { useNavigate } from 'react-router-dom';
@@ -78,13 +78,13 @@ const AppHeader: FC<HeaderProps> = () => {
               </Link>
             </div>
             <div className="md:hidden">
-              <button className="nav-buttons" onClick={() => setNavbar(!navbar)}>
+              <Button className="nav-buttons" onClick={() => setNavbar(!navbar)}>
                 {navbar ? (
                   <CloseOutlined className="nav-responsive-icon" />
                 ) : (
                   <MenuOutlined className="nav-responsive-icon" />
                 )}
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -93,22 +93,22 @@ const AppHeader: FC<HeaderProps> = () => {
             className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
               }`}
           >
-            <ul className="items-center justify-center space-y-2 md:flex md:space-x-1 md:space-y-0">
+            <ul className="items-center justify-center space-y-2  md:flex md:space-x-1 md:space-y-0">
               {navLinks.map((navLink: INavlinks) => (
-                <li key={navLink.id} className="list-none ">
-                  <button className="nav-buttons" onClick={() => handleNavigation(navLink.url)}>{navLink.title}</button>
+                <li key={navLink.id} className="list-none">
+                  <Button className="nav-buttons" onClick={() => handleNavigation(navLink.url)}>{navLink.title}</Button>
                 </li>
               ))
               }
             </ul>
           </div>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'row' }} className="space-x-5">
+        <div className="flex flex-row space-x-5">
           <Search />
           <Dropdown menu={{ items }}>
             <a onClick={(e) => e.preventDefault()}>
               <Space>
-                <Avatar style={{ backgroundColor: '#f56a00' }}>H</Avatar>
+                <Avatar className="bg-orange-600">H</Avatar>
               </Space>
             </a>
           </Dropdown>

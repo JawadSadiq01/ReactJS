@@ -63,7 +63,7 @@
   height: 30px;
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid rgb(173, 173, 173);
+  border-bottom: 2px solid rgb(212, 70, 70);
   margin: 10px 0;
   color: black;
   font-size: .8em;
@@ -74,7 +74,7 @@
 
 .inputField:focus {
   outline: none;
-  border-bottom: 2px solid rgb(199, 114, 255);
+  // border-bottom: 2px solid rgb(199, 114, 255);
 }
 
 .inputField::placeholder {
@@ -83,13 +83,16 @@
   font-weight: 500;
 }
 
-#button {
+.submit-button {
   z-index: 2;
   position: relative;
   width: 100%;
   border: none;
   background-color: rgb(162, 104, 255);
   height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   font-size: .8em;
   font-weight: 500;
@@ -98,8 +101,8 @@
   cursor: pointer;
 }
 
-#button:hover {
-  background-color: rgb(126, 84, 255);
+.submit-button:hover {
+  color: white;
 }
 
 .forgotLink {

@@ -1,7 +1,4 @@
-import {
-  atom,
-  selector,
-} from 'recoil';
+import { atom } from 'recoil';
 import { recoilPersist } from "recoil-persist";
 import token from '../../theme/token';
 

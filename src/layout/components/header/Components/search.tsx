@@ -1,10 +1,26 @@
+import { Button, Input } from 'antd';
 import '../style.scss'
+import { useState } from 'react';
+import { CloseOutlined, MenuOutlined } from '@ant-design/icons';
 
 export const Search = () => {
+  const [search, setSearch] = useState("");
+
+  const handleSearchInputChange = (event: any) => {
+    setSearch(event.target.value);
+  };
+  const handleSearchEmpty = (event: any) => {
+    event.preventDefault();
+    setSearch("");
+  };
+  const buttonStyle = {
+    width: '10px',
+  };
+
   return (
     <form className="w-full form">
       <label >
-        <input className="input fullWidth" type="text" placeholder="Search" id="search" />
+        <Input className="input fullWidth" type="text" onChange={handleSearchInputChange} value={search} placeholder="Search" id="search" />
         <div className="fancy-bg"></div>
         <div className="search">
           <svg viewBox="0 0 24 24" aria-hidden="true" className="r-14j79pv r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-4wgw6l r-f727ji r-bnwqim r-1plcrui r-lrvibr">
@@ -13,11 +29,7 @@ export const Search = () => {
             </g>
           </svg>
         </div>
-        <button className="close-btn" type="reset">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-          </svg>
-        </button>
+        <Button className="close-btn" onClick={handleSearchEmpty} shape="circle" icon={<CloseOutlined />} />
       </label>
     </form>
   )

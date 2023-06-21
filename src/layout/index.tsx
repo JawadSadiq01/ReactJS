@@ -2,26 +2,19 @@ import React, { useEffect, useState } from "react";
 import "./style.scss";
 import { Layout } from "antd";
 import AppHeader from "./components/header";
-// import AppSidebar from "./components/sidebar";
 import AppFooter from "./components/footer";
 import { Outlet, useNavigate } from "react-router-dom";
 import { ROUTES_CONSTANTS } from "../config/constants";
 import AppSidebar from "./components/sidebar";
 
-// import apiEndpoints from "../config/apiEndpoints";
-// import api from "../api";
-// import { Notifications } from "../components";
-// import { log } from "console";
-
 const { Content } = Layout;
 
 function AppLayout() {
-  // const { LOGOUT } = apiEndpoints;
-  const navigate = useNavigate();
   /* VARIABLE DECLARATION
   -------------------------------------------------------------------------------------*/
   const [collapsed, setCollapsed] = useState(false);
   const [collapsedWidth, setCollapsedWidth] = useState(94);
+  const navigate = useNavigate();
 
   /* EVENT LISTENERS
   -------------------------------------------------------------------------------------*/
@@ -39,26 +32,18 @@ function AppLayout() {
   };
 
   const handleLogout = async () => {
-    // const res: any = await api.get(LOGOUT);
-
     localStorage.clear();
-    // Notifications({
-    //   title: "Success",
-    //   description: "Logout Successfully",
-    //   type: "success",
-    // });
     navigate(`/${ROUTES_CONSTANTS.LOGIN}`);
   };
 
   /* RENDER APP
   -------------------------------------------------------------------------------------*/
-
   return (
     <Layout>
       <AppHeader
-      // collapsed={collapsed}
-      // sidebarToggler={collapsedSidebar}
-      // handleLogout={handleLogout}
+        collapsed={collapsed}
+        sidebarToggler={collapsedSidebar}
+        handleLogout={handleLogout}
       />
 
       <Layout>
@@ -68,7 +53,9 @@ function AppLayout() {
           collapsedWidth={collapsedWidth}
         />
 
-        <Content style={{ marginLeft: collapsed ? collapsedWidth : "250px" }}>
+        <Content
+          style={{ marginLeft: collapsed ? collapsedWidth : "250px" }}
+        >
           <Outlet />
         </Content>
       </Layout>
@@ -77,5 +64,4 @@ function AppLayout() {
     </Layout>
   );
 }
-
 export default AppLayout;

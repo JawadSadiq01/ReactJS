@@ -6,8 +6,8 @@ import { Spin } from 'antd';
 
 export const Loader = () => {
   return (
-    <div className="spinner-container">    
-      <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} />
+    <div className="spinner-container">
+      <Spin indicator={<LoadingOutlined className="text-red-500" spin />} />
     </div>
   )
 }

@@ -1,6 +1,5 @@
 export default {
-  APP_URL: import.meta.env.VITE_APP_URL,
-  MEDIA_URL: import.meta.env.VITE_APP_MEDIA_URL,
+  //url exports
   PUBLIC: 'PUBLIC',
   Manager: 'Manager'
 };
