@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import NotFound from "./pages/errors/404";
 import AppLayout from "./layout";
 import Signup from "./pages/Signup";
+import PublicLayout from "./layout/PublicLayout";
 
 const Loadable = (Component: LazyExoticComponent<FC>) => (props: any) =>
 (
@@ -29,19 +30,28 @@ export const publicRoutes = [
     element: <Navigate to={ROUTES_CONSTANTS.LOGIN} />,
   },
   {
-    key: `${ROUTES_CONSTANTS.LOGIN}`,
-    path: `${ROUTES_CONSTANTS.LOGIN}`,
-    element: <Login />,
-  },
-  {
-    key: `${ROUTES_CONSTANTS.SIGNUP}`,
-    path: `${ROUTES_CONSTANTS.SIGNUP}`,
-    element: <Signup />,
-  },
-  {
-    key: `${ROUTES_CONSTANTS.NotFound}`,
-    path: `${ROUTES_CONSTANTS.NotFound}`,
-    element: <NotFound />,
+    key: `${ROUTES_CONSTANTS.MAIN_LAYOUT}`,
+    path: "/",
+    element: (
+      <PublicLayout />
+    ),
+    children: [
+      {
+        key: `${ROUTES_CONSTANTS.LOGIN}`,
+        path: `${ROUTES_CONSTANTS.LOGIN}`,
+        element: <Login />,
+      },
+      {
+        key: `${ROUTES_CONSTANTS.SIGNUP}`,
+        path: `${ROUTES_CONSTANTS.SIGNUP}`,
+        element: <Signup />,
+      },
+      {
+        key: `${ROUTES_CONSTANTS.NotFound}`,
+        path: `${ROUTES_CONSTANTS.NotFound}`,
+        element: <NotFound />,
+      },
+    ],
   },
 ];
 

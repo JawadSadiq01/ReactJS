@@ -19,39 +19,6 @@ type INavlinks = {
   url: string
 };
 
-const items: MenuProps['items'] = [
-  {
-    label: (
-      <a target="_blank" rel="noopener noreferrer">
-        Profile
-      </a>
-    ),
-    key: '0',
-  },
-  {
-    type: 'divider',
-  },
-  {
-    label: (
-      <a target="_blank" rel="noopener noreferrer" >
-        Settings
-      </a>
-    ),
-    key: '1',
-  },
-  {
-    type: 'divider',
-  },
-  {
-    label: (
-      <a target="_blank" rel="noopener noreferrer">
-        Logout
-      </a>
-    ),
-    key: '2',
-  },
-];
-
 const navLinks: INavlinks[] = [
   { id: 1, title: 'Home', url: '/' },
   { id: 2, title: 'Blog', url: '/blog' },
@@ -64,9 +31,36 @@ const navLinks: INavlinks[] = [
 const AppHeader: FC<HeaderProps> = () => {
   const [navbar, setNavbar] = useState(false);
   const navigate = useNavigate();
+
   const handleNavigation = (url: string) => {
     navigate(url);
   };
+
+  const LogoutPress = () => {
+    localStorage.removeItem('accessToken');
+    navigate('login');
+  };
+
+  const items: MenuProps['items'] = [
+    {
+      label: (<a target="_blank" rel="noopener noreferrer">Profile</a>),
+      key: '0',
+    },
+    {
+      type: 'divider',
+    },
+    {
+      label: (<a target="_blank" rel="noopener noreferrer" >Settings</a>),
+      key: '1',
+    },
+    {
+      type: 'divider',
+    },
+    {
+      label: (<a onClick={LogoutPress} target="_blank" rel="noopener noreferrer" >Logout</a>),
+      key: '2',
+    },
+  ];
   return (
     <nav className="layout-header  w-full bg-white shadow">
       <div className="justify-between px-2 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">

@@ -35,11 +35,14 @@ function App() {
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         {accessToken
           ? useRoutes(
-            getRoutes(currentUser.role).concat(getRoutes(constants.PUBLIC))
+            getRoutes(constants.Manager)
+            // getRoutes(currentUser.role).concat(getRoutes(constants.PUBLIC))
           )
-          : useRoutes(getRoutes(constants.Manager))}
+          : useRoutes(getRoutes(constants.PUBLIC))
+        }
       </ErrorBoundary>
     </ConfigProvider>
   )
 }
+
 export default App

@@ -2,7 +2,8 @@ export default {
   //url exports
   APP_URL: 'http://localhost:5000/',
   PUBLIC: 'PUBLIC',
-  Manager: 'Manager'
+  Manager: 'Manager',
+  PRIVATE: 'PRIVATE',
 };
 
 export const ROUTES_CONSTANTS: any = {

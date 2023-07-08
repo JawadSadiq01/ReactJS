@@ -1,8 +1,16 @@
 import { Button, Input, theme } from "antd";
+import { useNavigate } from 'react-router-dom';
 import './style.scss'
 function Login() {
+  const navigate = useNavigate();
+
   const { useToken } = theme;
   const { token } = useToken();
+
+  const LoginPress = () => {
+    localStorage.setItem('accessToken', "accessToken");
+    navigate('/Dashboard');
+  };
 
   return (
     <div className="login-container">
@@ -22,7 +30,7 @@ function Login() {
           <Input type="password" className="inputField" id="password" placeholder="Password" />
         </div>
 
-        <Button className="submit-button">Login</Button>
+        <Button onClick={LoginPress} className="submit-button">Login</Button>
         <a className="forgotLink" href="#">Forgot your password?</a>
         <a className="signupLink" href="/signup">Don't have an account? Sign-up</a>
       </form>
