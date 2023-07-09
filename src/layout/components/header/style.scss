@@ -1,0 +1,354 @@
+.ant-dropdown {
+  width: 15%;
+}
+
+.layout-header {
+  box-shadow: 2px 24px 12px rgba(0, 0, 0, 0.04);
+  line-height: normal;
+  padding: 10px 0;
+  // display: flex;
+  height: 80px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav-responsive-icon {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 991px) {
+    height: 100%;
+  }
+
+  @media (max-width: 575px) {
+    height: 100%;
+  }
+
+  .ikd-logo {
+    // width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0 15px;
+
+    @media (max-width: 767px) {
+      max-width: 120px;
+      min-width: 120px;
+      width: 100%;
+    }
+  }
+
+  .nav-buttons {
+    width: fit-content;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: #1677ff;
+    border-radius: 5px;
+  }
+
+  .nav-buttons::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #1677ff;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+  }
+
+  .nav-buttons:hover::before {
+    width: 100%;
+  }
+
+  .nav-buttons:hover {
+    color: #FFF;
+  }
+}
+
+.ant-drawer {
+  .ant-drawer-content.notifications-drawer {
+    border-radius: 8px 0 0 8px;
+
+    .ant-drawer-header {
+      padding: 30px 30px 10px 30px;
+      border: none;
+
+      .ant-drawer-title {
+        color: #4C0027;
+        font-size: 18px;
+        line-height: 1.333333;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+      }
+    }
+
+    .ant-drawer-body {
+      padding: 0 30px 10px 30px;
+
+      .ant-list.ant-list-split {
+        .ant-list-items {
+          .ant-list-item {
+            border-bottom: 1px solid #D9DBE9;
+            padding-top: 20px;
+            padding-bottom: 10px;
+
+            .ant-list-item-meta {
+              .ant-list-item-meta-avatar {
+                margin-right: 15px;
+              }
+
+              .ant-list-item-meta-title {
+                color: #14142B;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 1.5714285;
+                font-family: 'Poppins', sans-serif;
+                margin: 0;
+              }
+
+              .ant-list-item-meta-description {
+                color: #A0A3BD;
+                font-size: 12px;
+                line-height: 2;
+                font-family: 'Poppins', sans-serif;
+                margin-top: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.ant-dropdown.user-dropdown {
+  z-index: 1290;
+
+  .ant-dropdown-arrow {
+    background-image: url(../../../assets/images/header/polygon.png);
+    background-repeat: no-repeat;
+    height: 33px;
+    width: 30px;
+    top: 13px;
+
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+
+  .user-dropdown-container {
+    border: 1px solid #D9DBE9;
+    padding: 20px 30px;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 2px #09A1DA1A;
+
+    border-radius: 8px;
+    min-width: 336px;
+    box-sizing: border-box;
+
+    .user-dropdown-meta {
+      display: flex;
+      border-bottom: 1px solid #D9DBE9;
+      padding-bottom: 20px;
+
+      .ant-avatar {
+        margin-right: 20px;
+      }
+
+      .user-dropdown-meta-content {
+        flex: 1;
+
+        .ant-typography {
+          margin: 0;
+        }
+
+        .user-meta-role {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    .ant-dropdown-menu {
+      padding: 10px 0 0;
+
+      .ant-dropdown-menu-item {
+        padding: 10px 0;
+        font-size: 14px;
+
+        &:hover {
+          background-color: transparent;
+        }
+
+        .ant-dropdown-menu-item-icon {
+          margin-right: 20px;
+        }
+      }
+    }
+
+    .user-dropdown-footer {
+      margin-top: 10px;
+    }
+
+  }
+}
+
+
+/* this is a recreation of twitter search in css */
+.form {
+  --input-text-color: #fff;
+  --input-bg-color: #283542;
+  --focus-input-bg-color: transparent;
+  --text-color: #949faa;
+  --active-color: #1b9bee;
+  --width-of-input: 200px;
+  --inline-padding-of-input: 1.2em;
+  --gap: 0.9rem;
+}
+
+/* form style */
+.form {
+  font-size: 0.9rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: var(--width-of-input);
+  position: relative;
+  isolation: isolate;
+}
+
+/* a fancy bg for showing background and border when focus. */
+.fancy-bg {
+  position: absolute;
+  width: 100%;
+  inset: 0;
+  // background: var(--input-bg-color);
+  border-radius: 10px;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 4px;
+}
+
+/* label styling */
+label {
+  width: 100%;
+  padding: 0.8em;
+  height: 40px;
+  padding-inline: var(--inline-padding-of-input);
+  display: flex;
+  align-items: center;
+}
+
+.search,
+.close-btn {
+  position: absolute;
+  cursor: pointer;
+}
+
+/* styling search-icon */
+.search {
+  fill: var(--text-color);
+  left: var(--inline-padding-of-input);
+}
+
+/* svg -- size */
+svg {
+  width: 17px;
+  display: block;
+}
+
+/* styling of close button */
+.close-btn {
+  border: none;
+  right: var(--inline-padding-of-input);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--active-color);
+  opacity: 0;
+  cursor: pointer;
+  visibility: hidden;
+  background-color: transparent;
+  color: black;
+  margin-right: -1rem;
+}
+
+/* styling of input */
+.input {
+  color: black;
+  // width: 100%;
+  max-width: 10rem !important;
+  font-size: medium;
+  margin-inline: min(2em, calc(var(--inline-padding-of-input) + var(--gap)));
+  background: none;
+  border: none;
+  border-color: initial !important;
+  box-shadow: none !important;
+}
+
+.input:hover {
+  border-color: initial !important;
+  box-shadow: none !important;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input:hover {
+  border: none;
+
+}
+
+.input::placeholder {
+  color: var(--text-color)
+}
+
+/* input background change in focus */
+.input:focus~.fancy-bg {
+  border: 1px solid var(--active-color);
+  background: var(--focus-input-bg-color);
+}
+
+/* search icon color change in focus */
+.input:focus~.search {
+  fill: var(--active-color);
+}
+
+/* showing close button when typing */
+.input:valid~.close-btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* this is for the default background in input,when selecting autofill options -- you can remove this code if you do not want to override the browser style.  */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+  -webkit-transition-delay: 9999s;
+}
