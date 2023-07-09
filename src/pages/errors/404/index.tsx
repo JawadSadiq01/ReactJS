@@ -1,6 +1,5 @@
-import { theme } from "antd";
+import { theme, Button } from "antd";
 import "./style.scss";
-import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 
 function NotFound() {

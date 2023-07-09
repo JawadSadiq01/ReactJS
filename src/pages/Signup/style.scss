@@ -1,10 +1,13 @@
+// @import "./scss/Global-colors.scss";
+@import "../../scss/Global-colors.scss";
+
 .login-container {
   display: flex;
   flex: 1;
   height: 90vh;
   justify-content: center;
   align-items: center;
-  background-color: #F5F5F5;
+  background-color: $primary-bg-color !important;
 }
 
 .form_main {
@@ -14,9 +17,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(230, 214, 214);
+  background-color: $auth-card-bg-dark !important;
   padding: 30px 30px 30px 30px;
-  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.062);
   position: relative;
   overflow: hidden;
   border-radius: 10px;
@@ -27,13 +29,12 @@
   content: "";
   width: 300px;
   height: 300px;
-  background-color: rgb(209, 193, 255);
+  background-color: $auth-card-bg-light;
   transform: rotate(45deg);
   left: -180px;
   bottom: 30px;
   z-index: 1;
   border-radius: 30px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.082);
 }
 
 .heading {
@@ -63,7 +64,6 @@
   height: 30px;
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid rgb(212, 70, 70);
   margin: 10px 0;
   color: black;
   font-size: .8em;
@@ -74,11 +74,10 @@
 
 .inputField:focus {
   outline: none;
-  // border-bottom: 2px solid rgb(199, 114, 255);
 }
 
 .inputField::placeholder {
-  color: rgb(80, 80, 80);
+  color: $primary-bg-color !important;
   font-size: 1em;
   font-weight: 500;
 }
@@ -88,7 +87,7 @@
   position: relative;
   width: 100%;
   border: none;
-  background-color: rgb(162, 104, 255);
+  background-color: $primary-light-bg-color;
   height: 30px;
   display: flex;
   align-items: center;
@@ -102,14 +101,14 @@
 }
 
 .submit-button:hover {
-  color: white;
+  color: $auth-card-bg-dark !important;
 }
 
 .forgotLink {
   z-index: 2;
   font-size: .7em;
   font-weight: 500;
-  color: rgb(44, 24, 128);
+  color: $primary-bg-color !important;
   text-decoration: none;
   padding: 8px 15px;
   border-radius: 20px;
@@ -120,6 +119,6 @@
   bottom: 10px;
   font-size: 1em;
   font-weight: 500;
-  color: rgb(44, 24, 128);
+  color: $primary-bg-color !important;
   text-decoration: none;
 }

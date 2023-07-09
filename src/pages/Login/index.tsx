@@ -1,14 +1,17 @@
 import { Button, Input, theme } from "antd";
 import { useNavigate } from 'react-router-dom';
 import './style.scss'
+import { useRecoilState } from "recoil";
+import { AccessTokenState } from "../../store/Signin";
 function Login() {
   const navigate = useNavigate();
 
   const { useToken } = theme;
   const { token } = useToken();
+  const [_, setAccessToken] = useRecoilState(AccessTokenState);
 
   const LoginPress = () => {
-    localStorage.setItem('accessToken', "accessToken");
+    setAccessToken("accessToken");
     navigate('/Dashboard');
   };
 

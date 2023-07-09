@@ -93,7 +93,7 @@ const patch = (url: any, data = {}, config: any = {}) =>
     .then(handleResponse)
     .catch(handleError);
 
-const del = (url: any, config: any = {}, data = {}) =>
+const del = (url: any, data = {}, config: any = {}) =>
   axiosInstance
     .delete(url, {
       ...config,

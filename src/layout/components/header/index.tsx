@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { Avatar, Button, Input } from "antd";
+import { Avatar, Button } from "antd";
 import { Link } from "react-router-dom";
 import './style.scss'
 import { useNavigate } from 'react-router-dom';
@@ -7,6 +7,7 @@ import type { MenuProps } from 'antd';
 import { Dropdown, Space } from 'antd';
 import { CloseOutlined, MenuOutlined } from '@ant-design/icons';
 import Search from "./Components/search";
+
 type HeaderProps = {
   collapsed: boolean;
   sidebarToggler: () => void;
@@ -28,7 +29,8 @@ const navLinks: INavlinks[] = [
   { id: 6, title: 'Contact', url: '/contact' },
 ];
 
-const AppHeader: FC<HeaderProps> = () => {
+const AppHeader: FC<HeaderProps> = (props) => {
+  const { handleLogout } = props;
   const [navbar, setNavbar] = useState(false);
   const navigate = useNavigate();
 
@@ -37,8 +39,7 @@ const AppHeader: FC<HeaderProps> = () => {
   };
 
   const LogoutPress = () => {
-    localStorage.removeItem('accessToken');
-    navigate('login');
+    handleLogout();
   };
 
   const items: MenuProps['items'] = [
@@ -61,6 +62,7 @@ const AppHeader: FC<HeaderProps> = () => {
       key: '2',
     },
   ];
+
   return (
     <nav className="layout-header  w-full bg-white shadow">
       <div className="justify-between px-2 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">

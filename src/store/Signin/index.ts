@@ -13,6 +13,12 @@ export const currentUserRoleState = selector({
   get: ({ get }) => get(currentUserState).role,
 });
 
+export const AccessTokenState = atom({
+  key: "accessTokenState",
+  default: undefined,
+  effects_UNSTABLE: [persistAtom],
+});
+
 export const rememberMeState = atom({
   key: "rememberMeState",
   default: true,

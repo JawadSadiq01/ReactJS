@@ -1,14 +1,14 @@
-import { ConfigProvider } from "antd";
-import { ErrorBoundary } from "react-error-boundary";
 import { useEffect, useMemo } from "react";
 import { useLocation, useNavigate, useRoutes } from "react-router-dom";
-import { getRoutes } from "./routes";
+import { ErrorBoundary } from "react-error-boundary";
+import { ConfigProvider } from "antd";
 import { useRecoilState } from "recoil";
+import { getRoutes } from "./routes";
 import { themeState } from "./store/Theme";
 import { ErrorFallback } from "./pages/errors/errorBoundary";
-import "./App.scss";
 import constants from "./config/constants";
-import { currentUserState } from "./store/Signin";
+import { AccessTokenState, currentUserState } from "./store/Signin";
+import "./App.scss";
 
 function App() {
 
@@ -18,9 +18,10 @@ function App() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const [currentTheme, setCurrentTheme] = useRecoilState(themeState);
-  const accessToken = localStorage.getItem("accessToken");
+  // const accessToken = localStorage.getItem("accessToken");
   const [currentUser, setCurrentUser] = useRecoilState(currentUserState);
-
+  const [accessToken, setAccessToken] = useRecoilState(AccessTokenState);
+  console.log(accessToken);
   useEffect(() => {
     // if (accessToken && pathname === (`/${ROUTES_CONSTANTS.LOGIN}`)) {
     //   navigate(`/${ROUTES_CONSTANTS.DASHBOARD}`);

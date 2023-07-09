@@ -6,6 +6,8 @@ import AppFooter from "./components/footer";
 import { Outlet, useNavigate } from "react-router-dom";
 import { ROUTES_CONSTANTS } from "../config/constants";
 import AppSidebar from "./components/sidebar";
+import { useRecoilState } from "recoil";
+import { AccessTokenState } from "../store/Signin";
 
 const { Content } = Layout;
 
@@ -14,6 +16,7 @@ function AppLayout() {
   -------------------------------------------------------------------------------------*/
   const [collapsed, setCollapsed] = useState(false);
   const [collapsedWidth, setCollapsedWidth] = useState(94);
+  const [_, setAccessToken] = useRecoilState(AccessTokenState);
   const navigate = useNavigate();
 
   /* EVENT LISTENERS
@@ -32,6 +35,7 @@ function AppLayout() {
   };
 
   const handleLogout = async () => {
+    setAccessToken(undefined);
     localStorage.clear();
     navigate(`/${ROUTES_CONSTANTS.LOGIN}`);
   };
